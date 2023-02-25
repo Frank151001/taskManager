@@ -1,0 +1,42 @@
+html,body{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+header{
+    height: 50px;
+}
+header h1{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(100, 76, 24);
+    text-align: center;
+    color: white;
+}
+
+h1{
+    color: blue;
+}
+main{
+    height: calc(100% - 50px);
+    min-height: 700px;
+}
+.parent{
+    display: flex;
+}
+#list{
+    flex: 3;
+    background-color: bisque;
+}
+#form{
+    flex: 2;
+    background-color: blueviolet;
+    padding: 10px 25px 10px 25px;
+    overflow-y: auto;
+}
+.field{
+    margin-bottom: 22px;
+}
+.field label{
+    color: black;
+}
