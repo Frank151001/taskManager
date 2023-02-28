@@ -13,6 +13,9 @@ header h1{
     text-align: center;
     color: white;
 }
+footer{
+    text-align: center;
+}
 
 h1{
     color: blue;
@@ -40,3 +43,19 @@ main{
 .field label{
     color: black;
 }
+.task{
+    display: flex;
+}
+.task .info{
+    flex:5;
+}
+.task .category{
+    flex:1;
+}
+.task .time{
+    flex: 2;
+}
+.task .details .label{
+    display: block;
+}
+

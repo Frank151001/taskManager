@@ -17,7 +17,10 @@
     <main class="container-fluid parent">
         <section id="list">
             <h5>Your Tasks</h5>
-            <button class="btn btn-primary">Hide Task</button>
+            <button id="toggleView"class="btn btn-primary">Hide Task</button>
+            <div id="pending-tasks">
+                <!-- render the task -->
+            </div>
         </section>
         <section id="form">
             <h5>Save Task</h5>
@@ -27,36 +30,37 @@
 
             <div class="field">
                 <label class="form-label">Title</label>
-                <input type="text" class="form-control">
+                <input type="text" id="txtTittle"class="form-control">
             </div>
             
             <div class="field">
                 <label class="form-label">Description</label>
-                <input type="text" class="form-control">
-            </div> 
-            
-            <div class="field">
-                <label class="form-label">Due Date</label>
-                <input type="datetime-local" class="form-control">
+                <input type="text" class="form-control" id="txtDesc">
             </div> 
             
             <div class="field">
                 <label class="form-label">Category</label>
-                <select class=" form-select">
+                <select class=" form-select" id="selCategory">
                     <option>Work</option>
                 </select>
             </div>
+            
+            <div class="field">
+                <label class="form-label">Due Date</label>
+                <input type="datetime-local" class="form-control" id="selDueDate">
+            </div> 
+
             <div class="field">
                 <label class="form-label">Priority</label>
-                <select class=" form-select">
+                <select class=" form-select" id="selPriority">
                     <option>Low</option>
                 </select>
             </div>
             <div class="field">
                 <label class="form-label">Color</label>
-                <input type="color" class="form-control">
+                <input type="color" class="form-control" id="selColor">
             </div> 
-            <button class="btn btn-dark">Save Task</button>
+            <button class="btn btn-dark" id="btnSave">Save Task</button>
         </section>
     </main>
     <footer>
@@ -64,6 +68,7 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="scripts/task.js"></script>
     <script src="scripts/app.js"></script>
 </body>
 </html>
