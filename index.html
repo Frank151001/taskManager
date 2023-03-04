@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TASK MANAGER</title>
     <link rel="stylesheet" href="styles/app.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -53,6 +53,9 @@
                 <label class="form-label">Category</label>
                 <select class=" form-select" id="selCategory">
                     <option>Work</option>
+                    <option>Personal</option>
+                    <option>School</option>
+                    <option>Physical</option>
                 </select>
             </div>
             
@@ -64,7 +67,9 @@
             <div class="field">
                 <label class="form-label">Priority</label>
                 <select class=" form-select" id="selPriority">
-                    <option>Low</option>
+                    <option class="low">Low</option>
+                    <option class="medium">Medium</option>
+                    <option class="high">High</option>
                 </select>
             </div>
             <div class="field">
@@ -73,6 +78,7 @@
             </div> 
             <button class="btn btn-dark" id="btnSave">Save Task</button>
         </section>
+      
     </main>
     <div class="footer-basic">
             <footer>

@@ -1,8 +1,21 @@
 /* GLOBAL */
-html,body{
+html{
     height: 100vh;
     margin: 0;
     padding: 0;
+}
+header{
+  background-color: #40513B;
+}
+
+main{
+  height: calc(100% - 50px);
+  min-height: 700px;
+}
+body {
+  background-color: #f2f2f2;
+  font-family: sans-serif;
+  margin: 0;
 }
 
 footer{
@@ -10,15 +23,23 @@ footer{
     color:white;
 }
 
-h1{
-    color: blue;
+h1 {
+  text-align: center;
+  color: #333;
 }
-main{
-    height: calc(100% - 50px);
-    min-height: 700px;
+
+ul {
+  list-style: none;
+  padding: 0;
 }
-header{
-    background-color: #40513B;
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  transition: background-color 0.3s ease-in-out;
 }
 
 /* HEADER */
@@ -84,6 +105,73 @@ header{
   90% {margin-top: -42px;}
   100% {margin-top: -42px;}
 }
+/* MAIN */
+.parent{
+  display: flex;
+}
+#list{
+  flex: 3;
+ 
+}
+#form{
+  flex: 2;
+  
+  padding: 10px 25px 10px 25px;
+  overflow-y: auto;
+}
+
+
+.containerTask {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+.checkbox {
+  margin-right: 10px;
+}
+
+.title {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.due-date {
+  font-style: italic;
+  color: #999;
+  margin-right: 10px;
+}
+
+.delete-button {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.delete-button:hover {
+  background-color: #e74c3c;
+}
+.high {
+  color: #e74c3c;
+}
+
+.medium {
+  color: #f39c12;
+}
+
+.low {
+  color: #2ecc71;
+}
+
+
 
 /* FOOTER */
 .footer-basic {
@@ -145,48 +233,6 @@ header{
     color:#aaa;
     margin-bottom:0;
   }
-  
-
-
-
-
-.parent{
-    display: flex;
-}
-#list{
-    flex: 3;
-   
-}
-#form{
-    flex: 2;
-    
-    padding: 10px 25px 10px 25px;
-    overflow-y: auto;
-}
-.field{
-    margin-bottom: 22px;
-}
-.field label{
-    color: black;
-}
-.task{
-    display: flex;
-}
-.task .info{
-    flex:5;
-}
-.task .category{
-    flex:1;
-}
-.task .time{
-    flex: 2;
-}
-.task .details .label{
-    display: block;
-}
-
-
-
 
 
 

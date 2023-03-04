@@ -66,20 +66,46 @@ function displayTask(newTask){
     } else{
         icon=`<i class='${notImportantIcon}'></i>`;
     }
-    
 
-    let syntax= `<div class="task" style=""border:2px solid ${newTask.color}>
-        <div class="info">
-            <h1>${newTask.title}</h1>
-            <p>${newTask.description}</p>
-        </div>
-        <label>${newTask.category}</label>
-        <div class="details">
-            <label>${newTask.priority}</label>
-            <label>${newTask.dueDate}</label>
-        </div>
+    let syntax=`
+    <div class="containerTask" style="border: 4px solid${newTask.color};margin:8px;border-radius: 15px;">
+        <ul id="task-list">
+          <li>
+            <input type="checkbox" class="checkbox">${icon}</input>
+            <span class="title">${newTask.title}</span>
+            <span class="description">${newTask.description}</span>
+            <span class="due-date">${newTask.dueDate}</span>
+            <button class="delete-button">Delete</button>
+          </li>
+        </ul>
     </div>`;
-    $("#pending-tasks").append(syntax);
+      $("#pending-tasks").append(syntax);
+        deleteButtom(syntax);
+
+}
+
+function deleteButtom(task){
+    const deleteButtons = document.querySelectorAll('.delete-button');
+    deleteButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const listItem = button.parentElement;
+        listItem.remove(task);
+    });
+    });
+
+
+    const checkboxes = document.querySelectorAll('.checkbox');
+    checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('click', () => {
+        if (checkbox.checked) {
+        const listItem = checkbox.parentElement;
+        listItem.classList.add('animate__animated', 'animate__fadeOut');
+        setTimeout(() => {
+            listItem.remove(task);
+        }, 1000);
+        }
+    });
+    });
 }
 
  
