@@ -31,23 +31,23 @@ function saveTask(){
     let task=new Task(isImportant,title,desc,category,dueDate,priority,color);
     console.log(task);
     displayTask(task);
-}
+    deleteButtom(task);
 
-function testRequest(){
     $.ajax({
         type:"POST",
-        URL:"http://fsdiapi.azurewebsites.net/api/tasks",
-
+        url:"http://fsdiapi.azurewebsites.net/api/tasks",
+        data:JSON.stringify(task),
+        contentType:"application/json",
         success: function(res){
-            let data=JSON.parse(res);
             console.log(res);
+           
         },
         error: function(error){
             console.log(error);
-            alert("Unexpected error");
         }
     });
 }
+
 
 function toggleView(){
     if(isVisible){
@@ -75,13 +75,12 @@ function displayTask(newTask){
             <span class="title">${newTask.title}</span>
             <span class="description">${newTask.description}</span>
             <span class="due-date">${newTask.dueDate}</span>
-            <button class="delete-button">Delete</button>
+            <button class="delete-button" id="deleteButtom">Delete</button>
           </li>
         </ul>
     </div>`;
       $("#pending-tasks").append(syntax);
-        deleteButtom(syntax);
-
+      deleteButtom($("#pending-tasks"));
 }
 
 function deleteButtom(task){
@@ -89,10 +88,11 @@ function deleteButtom(task){
     deleteButtons.forEach(button => {
     button.addEventListener('click', () => {
         const listItem = button.parentElement;
-        listItem.remove(task);
+        const listItem2 = listItem.parentElement;
+        const listItem3 = listItem2.parentElement;
+        listItem3.remove(task);
     });
     });
-
 
     const checkboxes = document.querySelectorAll('.checkbox');
     checkboxes.forEach(checkbox => {
@@ -101,18 +101,49 @@ function deleteButtom(task){
         const listItem = checkbox.parentElement;
         listItem.classList.add('animate__animated', 'animate__fadeOut');
         setTimeout(() => {
-            listItem.remove(task);
+            const listItem2 = listItem.parentElement;
+            const listItem3 = listItem2.parentElement;
+            listItem3.remove(task);
         }, 1000);
         }
     });
     });
 }
 
- 
+function testRequest(){
+    $.ajax({
+        type:"GET",
+        url:"http://fsdiapi.azurewebsites.net/", 
+        success: function(res){
+            console.log(res);
+        },
+        error: function(error){
+            console.log(error);
+        }
+    });
+}
 
+ 
+function loadTasks(){
+    $.ajax({
+        type:"GET",
+        url:"http://fsdiapi.azurewebsites.net/api/tasks",
+        success: function(res){
+            let data = JSON.parse(res);
+            console.log(res);
+            console.log(data);
+        },
+        error: function(error){
+            console.log(error);
+            alert("Unexpected error");
+        }
+    });
+}
 
 function init(){
     console.log("Task Manager");
+    loadTasks();
+
     $("#formIcon").click(toggleImportant);
     $("#toggleView").click(toggleView);
     $("#btnSave").click(saveTask);
