@@ -33,8 +33,30 @@ function saveTask(){
     displayTask(task);
 }
 
+function testRequest(){
+    $.ajax({
+        type:"POST",
+        URL:"http://fsdiapi.azurewebsites.net/api/tasks",
+
+        success: function(res){
+            let data=JSON.parse(res);
+            console.log(res);
+        },
+        error: function(error){
+            console.log(error);
+            alert("Unexpected error");
+        }
+    });
+}
+
 function toggleView(){
-    
+    if(isVisible){
+        isVisible=false;
+        $("#form").hide();
+    }else{
+        isVisible=true
+        $("#form").show();
+    }
 }
 
 function displayTask(newTask){

@@ -8,14 +8,25 @@
     <link rel="stylesheet" href="styles/app.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="https://kit.fontawesome.com/337be747ec.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <header>
-        <h1>My super task Manager</h1>
+        <div class="container">
+            <p class="info">Welcome</p>
+            <section class="animation">
+              <div class="first"><div>Back!<div></div>
+              <div class="second"><div>This is my</div></div>
+              <div class="third"><div>Task Manager</div></div>
+            </section>
+        </div>
     </header>
+    
 
     <main class="container-fluid parent">
         <section id="list">
+
             <h5>Your Tasks</h5>
             <button id="toggleView"class="btn btn-primary">Hide Task</button>
             <div id="pending-tasks">
@@ -63,9 +74,20 @@
             <button class="btn btn-dark" id="btnSave">Save Task</button>
         </section>
     </main>
-    <footer>
-        By:Francisco Ibarra
-    </footer>
+    <div class="footer-basic">
+            <footer>
+                <div class="social"><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-snapchat"></i></a><a href="#"><i class="fa-brands fa-twitter"></i></a><a href="#"><i class="fa-brands fa-facebook"></i></i></a></div>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="#">Home</a></li>
+                    <li class="list-inline-item"><a href="#">Services</a></li>
+                    <li class="list-inline-item"><a href="#">About</a></li>
+                    <li class="list-inline-item"><a href="#">Terms</a></li>
+                    <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                </ul>
+                <p class="copyright">Francisco Ibarra © 2023</p>
+            </footer>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="scripts/task.js"></script>
